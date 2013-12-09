@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileNotFoundException;
+
+
+public class StatesReader {
+	BufferedReader buffReader = null;
+	FileReader fileReader = null;
+	
+	public void uploadStates() {
+		try {
+			fileReader = new FileReader("C:\\Users\\zhumagulov_r\\workspace\\Lesson17\\src\\res\\scores.txt");
+			buffReader = new BufferedReader(fileReader);
+			
+			
+			
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+}

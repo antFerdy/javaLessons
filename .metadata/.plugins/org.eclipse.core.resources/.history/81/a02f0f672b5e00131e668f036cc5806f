@@ -1,0 +1,16 @@
+package my.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class EditPage {
+
+	public static void edit() {
+		WebElement td = Browser.instance.findElement(By
+				.cssSelector("html body div#wrapper div#page-wrapper div.row div.col-lg-12 table#news.table tbody#tab tr td a"));
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,38 @@
+package my.test;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class CompanyPage {
+
+	public static void filter() {
+		WebElement filterBtn = Browser.instance.findElement(By.id("filtr"));
+		WebElement selectStatus = Browser.instance.findElement(By.id("status"));
+		Select dropDown = new Select(selectStatus);
+		dropDown.selectByVisibleText("Не проверено");
+		filterBtn.click();
+		
+		/*ArrayList<WebElement> statusMenuOptions = (ArrayList<WebElement>) dropDown.getOptions();
+		for(WebElement option1:statusMenuOptions) {
+			if(option1.getText().equals(status)) {
+				System.out.println("Check");
+				
+			}
+			else {
+				break;
+			}
+		}*/
+	}
+
+	public static void editStatus(String string) {
+		// TODO Auto-generated method stub
+		WebElement editLinkInTable = Browser.instance.findElement(By
+				.xpath("/html/body/div/div/div/div/table[3]/tbody/tr/td[6]"));
+		WebElement editLink = editLinkInTable.findElement(By.tagName("a"));
+		editLink.click();
+	}
+
+}

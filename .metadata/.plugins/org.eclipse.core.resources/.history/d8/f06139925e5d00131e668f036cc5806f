@@ -1,0 +1,27 @@
+package my.test;
+
+import java.util.ArrayList;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class CompanyPage {
+
+	public static void filter(String status) {
+		WebElement selectStatus = Browser.instance.findElement(By.id("status"));
+		Select dropDown = new Select(selectStatus);
+		
+		ArrayList<WebElement> statusMenuOptions = (ArrayList<WebElement>) dropDown.getOptions();
+		for(WebElement option1:statusMenuOptions) {
+			if(option1.getText().equals(status)) {
+				System.out.println("Check");
+				option1.click();
+			}
+			else {
+				break;
+			}
+		}
+	}
+
+}

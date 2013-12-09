@@ -1,0 +1,9 @@
+import java.awt.Graphics;
+
+@SuppressWarnings("serial")
+public class TicTacToe extends javax.swing.JApplet {
+	
+	public void paint (Graphics g) {
+		g.drawString("Hello World!", 50, 100);
+	}
+}

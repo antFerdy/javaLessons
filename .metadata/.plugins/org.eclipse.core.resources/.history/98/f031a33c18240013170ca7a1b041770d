@@ -1,0 +1,68 @@
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Savepoint;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+
+
+public class Dialog extends java.awt.Dialog implements ActionListener{
+	
+	Vector a = new Vector();
+	Vector b = new Vector();
+	Vector c = new Vector();
+	
+	
+	
+	JComboBox ñ4 = new JComboBox(a);
+	JComboBox c2 = new JComboBox(b);
+	JComboBox c3 = new JComboBox(c);
+	
+	JButton save = new JButton("Save ");
+	JButton cancel = new JButton("Cancel");
+
+	public Dialog(Frame fl, String title, boolean modal) {
+		super(fl, title, modal);
+		setLayout(new FlowLayout());
+		setSize(300,200);
+		
+		add(ñ4);
+		add(c2);
+		add(c3);
+		add(save);
+		add(cancel);
+		
+		c2.addActionListener(this);
+		c3.addActionListener(this);
+		ñ4.addActionListener(this);
+		save.addActionListener(this);
+		cancel.addActionListener(this);
+		
+		
+		
+		Color black;
+		Color white;
+		Color red;
+		
+		a.add(black);
+		a.add(white);
+		a.add(red);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e1) {
+		if(e1.getSource() == cancel) {
+			dispose();
+		}
+		
+	}
+
+}

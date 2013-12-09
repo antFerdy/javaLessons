@@ -1,0 +1,165 @@
+package ui;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+import javax.swing.BoxLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+import constants.GameConstants;
+import engine.PingPongGameEngine;
+
+
+public class PingPongGameTable extends JPanel implements GameConstants {
+    JLabel label;
+    
+    public int kidRacketY = KID_RACKET_X_START;
+    public int compRacketY = 100;
+    public int x = 60;
+    public int y = 110;
+  
+    //Устанавливаем координаты мяча
+    public void setCoordinates(int x, int y) {
+        this.x = x;
+        this.y = y;
+        repaint();
+    }
+    
+    public void setCompCoordinates(int yBallMove) {
+    	compRacketY = yBallMove;
+    	repaint();
+    }
+    
+    
+    Dimension prefferedSize = new Dimension(TABLE_WIDTH,TABLE_HEIGHT);
+    
+    
+    //Set size of frame
+    public Dimension getPrefferedSize() {
+        return prefferedSize;
+    }
+    
+    //Constructor instaniates the engine
+    PingPongGameTable() {
+        PingPongGameEngine gameEngine = new PingPongGameEngine(this);
+        addMouseMotionListener(gameEngine);
+        addKeyListener(gameEngine);
+    }
+    
+    //Add a panel and layout
+    void addPaneltoFrame(Container container) {
+        container.setLayout(new BoxLayout(container,BoxLayout.Y_AXIS));
+        container.add(this);
+        
+        label = new JLabel("Press N for a new game, S to serve or Q to quit");
+        container.add(label);
+    }
+    
+    //Paint all graphics
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        // paint the table green
+        g.setColor(Color.GREEN);
+        g.fillRect(0,0,TABLE_WIDTH,TABLE_HEIGHT);
+        
+        // paint the right racket
+        g.setColor(Color.yellow);
+        g.fillRect(KID_RACKET_X_START,kidRacketY,5,30);
+       
+        // paint the left racket
+        g.setColor(Color.blue);
+        g.fillRect(ComputerRacketX,compRacketY,5,30);
+        
+        // Draw the white lines on the table
+        g.setColor(Color.white);
+        g.drawRect(10,10,300,200);
+        g.drawLine(160,10,160,210);
+        // Display the ball
+        g.setColor(Color.red);
+        g.fillOval(x,y,XSIZE,YSIZE);
+        
+        requestFocus();
+        
+        }
+    
+    public void setKidRacketY(int xCoordinate) {
+        this.kidRacketY = xCoordinate;
+    }
+    
+    public int getKidRacketY(int xCoordinate) {
+        return kidRacketY;
+    }
+    
+    
+    //Устанавливаем счет игры
+    public void setLabelText(String str) {
+        label.setText(str);
+        repaint();
+    }
+    
+    
+    
+    
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Ping Pong Green Table");
+        
+        //cross at window corner
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        
+        PingPongGameTable table = new PingPongGameTable();
+        table.addPaneltoFrame(f.getContentPane());
+        
+        //size and visible
+        f.setBounds(0, 0, 400,300);
+        f.setVisible(true);
+        
+        //Cоздаем сокеты сервака и клиента 
+        ServerSocket serverSocket = null;
+        Socket client = null;
+        
+        //Создаем исходящий и входящий поток
+        OutputStream out = null;
+        BufferedReader inRead = null;
+        
+        try {
+        	//Инициализируем серверный сокет
+			serverSocket = new ServerSocket(3000);
+			
+			while(true) {
+				serverSocket.accept();
+				
+				//Принимаем входящий поток 
+				inRead = new BufferedReader(new InputStreamReader(client.getInputStream()));
+				
+				//Читаем координаты ракетки клиента
+				int yClientRacket = inRead.read();
+				
+				
+				
+				
+				
+				
+			}
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        
+        
+
+    }
+
+}
+

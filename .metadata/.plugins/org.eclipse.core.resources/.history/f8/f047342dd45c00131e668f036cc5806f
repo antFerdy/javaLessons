@@ -1,0 +1,39 @@
+package my.test;
+
+import static org.junit.Assert.*;
+
+import my.pageObjects.Dashboard;
+import my.pageObjects.LoginPage;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestChange_CompanyStatus {
+
+	@Before
+	public void setUp() throws Exception {
+		Browser.initialize();
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		LoginPage.GoTo();
+		
+		LoginPage.loginAs("admin")
+		.WithPassword("admin")
+		.login();
+		
+		Dashboard.GoToCompany();
+		/*Company.filter("Not Checked");
+		Company.changeTheStatus("Normal");
+		Company.filter("Normal");
+		*/
+		
+	}
+
+}

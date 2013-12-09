@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;portalSk.Authorization.java&apos; to &apos;Login.java&apos;&#x0D;&#x0A;- Original project: &apos;AutomatedPortalTesting&apos;&#x0D;&#x0A;- Original element: &apos;portalSk.Authorization.java&apos;&#x0D;&#x0A;- Renamed element: &apos;portalSk.Login.java&apos;" description="Rename compilation unit &apos;Authorization.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;portalSk{Authorization.java" name="Login.java" references="false" stamp="1374730831830" version="1.0"/>
+</session>

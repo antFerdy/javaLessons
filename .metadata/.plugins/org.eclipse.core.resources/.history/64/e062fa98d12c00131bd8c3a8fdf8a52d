@@ -1,0 +1,102 @@
+package ui;
+import java.awt.*;
+import javax.swing.*;
+import constants.GameConstants;
+import engine.PingPongGameEngine;
+
+
+@SuppressWarnings("serial")
+public class PingPongGreenTable extends JPanel implements GameConstants {
+	JLabel label;
+	private Point point = new Point(0,0);
+	private int ComputerRacketX = 15;
+	private int KidRacketY = KID_RACKET_Y_START;
+	
+	Dimension preferredSize = new Dimension(TABLE_WIDTH,TABLE_HEIGHT);
+	
+	
+	public Dimension getPrefferedSize() {
+		return preferredSize;
+	}
+	
+	/*public void setPointCoordinates(int x,int y) {
+		point.x = x;
+		point.y = y;
+	}*/
+	
+	// Constructor instantiates the engine
+    PingPongGreenTable(){
+      PingPongGameEngine gameEngine = new PingPongGameEngine(this);
+       // Listen to mouse clicks to show its coordinates 
+       //  addMouseListener(gameEngine);
+      
+       // Listen to mouse movements to move the rackets
+         addMouseMotionListener(gameEngine);
+         
+       // Добавляем кей листенер
+         addKeyListener(gameEngine);
+     }
+	
+    
+    // Add a panel with a JLabel to the frame
+    private void addPaneltoFrame(Container container) {
+       container.setLayout(new BoxLayout(container, BoxLayout.Y_AXIS));
+       container.add(this);
+        label = new JLabel("Click to see coordinates");
+        container.add(label);
+     }
+    
+    public void paintComponent(Graphics g) {
+    	super.paintComponent(g);
+    	g.setColor(Color.GREEN);
+    	
+    	//table 
+    	g.fillRect(0, 0, TABLE_WIDTH, TABLE_HEIGHT);
+    	
+    	//right racket
+    	g.setColor(Color.yellow);
+    	g.fillRect(KID_RACKET_X_START, KidRacketY, 5, 30);
+    	
+    	
+    	//left racket
+    	g.setColor(Color.blue);
+    	g.fillRect(ComputerRacketX, 100, 5, 30);
+    	
+    	
+    	//paint the ball 
+    	g.setColor(Color.red);
+    	g.fillOval(25,110, 10, 10);
+    	
+    	//White lines
+    	g.setColor(Color.white);
+    	g.drawRect(10, 10, 300, 200);
+    	g.drawLine(160,10,160,210);
+    	
+    	//point if have
+    	if(point != null) {
+    		label.setText("Coordinatex(x,y): " + point.x + " , " + point.y);
+    		g.fillRect(point.x, point.y, 2, 2);
+    	}
+
+    }
+    
+  	//setter for user's racket
+	 public void setKidRacketY(int xCoordinate){ 
+	       this.KidRacketY = xCoordinate;
+	     }
+	 //getter for user's racket
+	 public int getRacketY(int xCoordinate) {
+		return KidRacketY;
+	 }
+    
+	 public static void main(String[] args) {
+		 JFrame f = new JFrame("Ping Pong Green Table");
+		 f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		 
+		 PingPongGreenTable table = new PingPongGreenTable();
+		 table.addPaneltoFrame(f.getContentPane());
+		 
+		 f.setBounds(0, 0, 500, 400);
+		 f.setVisible(true);
+	 }
+}

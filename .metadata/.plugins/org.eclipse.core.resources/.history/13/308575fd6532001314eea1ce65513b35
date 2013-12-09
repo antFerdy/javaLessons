@@ -1,0 +1,50 @@
+
+package com.java.lesson23;
+import java.sql.*;
+import java.util.ArrayList;
+/**
+ * @author zhumagulov_r
+ *
+ */
+public class Portfolio implements Runnable {
+
+
+	Connection conn = null;
+	Statement stmt = null;
+	ResultSet rs = null; 
+	@Override
+	public void run() {
+	
+		//ResultSetMetaData rsmt = null;
+		try {
+			conn = DriverManager.getConnection("jdbc:derby://localhost:1527/Lesson22");
+			stmt = conn.createStatement();
+			String query = "Select * from Portfolio2";
+			rs = stmt.executeQuery(query);
+
+			
+			while(rs.next()) {
+				
+				System.out.println(rs.getInt("id")+ " " +rs.getString("symbol") + " " + rs.getInt("quantity") + " " + rs.getDouble("price") + 
+						" Buying power used: " +  rs.getInt("quantity")*rs.getInt("price"));
+			}
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+			
+		} finally {
+			try {
+				conn.close();
+				stmt.close();
+				rs.close();
+			} catch (SQLException e) {
+				System.out.println(e.getErrorCode());
+				
+			}
+			
+		}
+		
+	}
+
+}

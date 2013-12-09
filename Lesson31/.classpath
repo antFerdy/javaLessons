@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/fscontext.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/glassfish-api.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/grizzly-framework.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/grizzly-portunif.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/hk2-api.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imq.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqadmin.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqbridgemgr.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqbroker.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqjmsbridge.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqjmx.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqservlet.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqstomp.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqutil.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/imqxm.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/javax.transaction-api.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/jaxm-api.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/jhall.jar"/>
+	<classpathentry kind="lib" path="C:/glassfish4/mq/lib/jms.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

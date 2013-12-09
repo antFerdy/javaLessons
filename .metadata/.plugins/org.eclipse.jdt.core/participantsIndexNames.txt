@@ -1,0 +1,11 @@
+INDEX VERSION 1.126
+C:\Users\zhumagulov_r\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1126123852.index
+\Lesson28\src
+C:\Users\zhumagulov_r\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1874488128.index
+\Lesson28part3\src
+C:\Users\zhumagulov_r\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3910277422.index
+\LESSON28P2\src
+C:\Users\zhumagulov_r\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\40442572.index
+\Lesson28\src
+C:\Users\zhumagulov_r\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1941564524.index
+\Lesson29part2\src

@@ -1,0 +1,9 @@
+While this technique still works, it clogs the code with anonymous Runnable classes. The class 
+javax.swing.SwingWorker gives you a cleaner (though not necessarily simpler) means of dealing 
+with the event dispatch thread. This thread class implements Runnable and Future, and so can be 
+submitted to the Executor for execution and return a result.
+Let’s say a Swing application needs to make a request to the server to get the market news informa-
+tion, which may take a couple of seconds. So that the UI won’t be frozen for these seconds, this 
+request has to be performed in a background thread, and when the result is ready the UI has to be 
+updated. To arrange this, create a subclass of SwingWorker and override its doInBackground() 
+method, then instantiate it and call its execute() method, as in Listing 21-5.

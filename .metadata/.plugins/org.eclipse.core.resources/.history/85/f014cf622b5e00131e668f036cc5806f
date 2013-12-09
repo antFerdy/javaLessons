@@ -1,0 +1,14 @@
+package my.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class EditPage {
+
+	public static void edit() {
+		WebElement td = Browser.instance.findElement(By.xpath("/html/body/div/div/div/div/table[2]/tbody/tr/td[6]"));
+		
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+package engine;
+
+import java.awt.event.MouseListener;
+
+import ui.PingPongGreenTable;
+
+public class PingPongGameEngine implements MouseListener {
+
+	public PingPongGameEngine(PingPongGreenTable pingPongGreenTable) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

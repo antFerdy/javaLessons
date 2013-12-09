@@ -1,0 +1,27 @@
+package my.test;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class EditPage {
+
+	public static void edit() {
+		//Waiting for refreshing table
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//find link in table data
+		WebElement td = Browser.instance.findElement(By
+				.cssSelector("html body div#wrapper div#page-wrapper div.row div.col-lg-12 table#news.table tbody#tab tr td a"));
+		td.click();
+		
+		
+	}
+
+}

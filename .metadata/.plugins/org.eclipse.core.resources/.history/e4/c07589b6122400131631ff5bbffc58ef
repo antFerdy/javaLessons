@@ -1,0 +1,67 @@
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class MyCustomizableGui implements ActionListener {
+	 
+	JFrame fr = new JFrame();
+	JPanel pnl = new JPanel(new GridLayout());
+	JButton btn = new JButton("Properties");
+	JTextField fl = new JTextField("Type here ");
+	
+	MyCustomizableGui() {
+		pnl.add(fl);
+		pnl.add(btn);
+		fr.setContentPane(pnl);
+		fr.pack();
+		fr.setVisible(true);
+		btn.addActionListener(this);
+	}
+	
+	public class DialogFrame() {
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		MyCustomizableGui gui = new MyCustomizableGui();
+
+	}
+	
+	
+	
+	
+
+	public void actionPerformed(ActionEvent e) {
+		
+		if(btn == e.getSource()) {
+			
+			
+			
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+	}
+
+}

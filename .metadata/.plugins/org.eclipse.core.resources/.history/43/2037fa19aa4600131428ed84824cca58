@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="StudentTemlate.html">
+	<h:form>
+	<h: outputText value="Trader Name: "/>
+	<h: inputText value= "@{student.name}" title = "id" id = "studentId"/><br/>
+	
+	<h: outputText value = "Class Id:"/>
+	<h: inputText value = "#{student.id}" title = "classId" id="classId" /><br/>
+	<h: commandButton action = "enrolled" value = "submit"/>
+	</h:form>
+</ui:composition>
+</html>

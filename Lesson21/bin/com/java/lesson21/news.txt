@@ -1,0 +1,16 @@
+Second, the class MarketNewsWorker uses generics and has two parameters, <List<String> 
+and String>. The reason for this is that the overridden method doInBackground() might call 
+the SwingWorker’s process() method, and will call its done() method on completion —   this is 
+where the UI is being updated. Two parameters indicate what types of data will be returned by 
+doInBackground() and given to process() respectively.
+Why might you consider calling the method process() during your thread execution? You might do 
+it to support some kind of progress meter or other means of reporting the progress of long-running 
+processes. If, for example, a long-running thread is reading a large fle or performing some lengthy 
+calculations, you might want to calculate the percentage of completion and report it to the calling 
+Swing application. 
+You are not allowed to call the process() method directly, but have to call a method called 
+publish(), which will internally call process(). Override process() to add some messages to 
+the log fle or update the progress meter. The code to display the result of the calculations on the 
+UI should be written in the method done().
+Listing 21-6 shows you a typical way to program with SwingWorker. I left out the details on pur-
+pose so you’d have something to do for today’s homework.

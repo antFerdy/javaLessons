@@ -1,0 +1,14 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.io.Serializable;
+
+
+public class UserPreferences implements Serializable {
+	Color cl = new Color(0);
+	Font fn = new Font(null);
+	int font;
+	
+	
+	
+	
+}

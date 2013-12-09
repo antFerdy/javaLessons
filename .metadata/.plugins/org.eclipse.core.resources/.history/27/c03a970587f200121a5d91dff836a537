@@ -1,0 +1,9 @@
+package engine;
+
+public class PingPongGameEngine {
+
+	public PingPongGameEngine(PingPongGreenTable pingPongGreenTable) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

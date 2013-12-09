@@ -1,0 +1,61 @@
+package ui;
+
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+
+public class Ball {
+	//Создаем окружность 
+	public Ellipse2D getShape() {
+		return new Ellipse2D.Double(x,y,XSIZE,YSIZE);
+	}
+	
+	//Метод движения нашего шарика
+	public void move (Rectangle2D bounds, Rectangle2D racket1, Rectangle2D racket2) {
+		
+		x += dx;
+		y += dy;
+		//если шарик вышел за поле, то 
+		if(x >= bounds.getMaxX()) {
+			//Игрок выйграл, игрок 2 проиграл
+			
+		}
+		
+		//Если шарик вышел за поле, то 
+		else if(x <= bounds.getMinX()) {
+			//Игрок2 выйграл, игрок проиграл
+			
+		}
+		
+		//Если шарик задел нижнюю границу
+		else if(y <= bounds.getMinY()) {
+			//Отбивается от нижней границы
+			y = bounds.getMinY() - YSIZE;
+			dy = -dy;
+		}
+		//Если шарик задел верхнюю границу
+		else if(y >= bounds.getMaxY()) {
+			y = bounds.getMaxY() - YSIZE;
+			//Отбивается от верхней границы
+			dy = - dy;
+		}
+		
+		//Если шарик задел ракетку1 (левую) 
+		else if(x == racket1.getMaxX()) {
+			if(y <= racket1.getMaxY() && y >= racket1.getMinY()) {
+				//Отбивается от ракетки
+			
+				
+				
+			}
+		}
+		
+		
+	}
+	
+	double x;
+	double y;
+	double XSIZE;
+	double YSIZE;
+	double dy;
+	double dx;
+}

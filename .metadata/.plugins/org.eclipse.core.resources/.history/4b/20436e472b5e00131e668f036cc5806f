@@ -1,0 +1,10 @@
+package my.test;
+
+public class EditPage {
+
+	public static void edit() {
+		
+		
+	}
+
+}

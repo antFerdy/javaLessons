@@ -1,0 +1,29 @@
+package my.test;
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class EditPage {
+
+	public static void edit() {
+		//Waiting for refreshing table
+		WebElement myDynamicElement = (new WebDriverWait(Browser.instance, 10))
+				.until(ExpectedConditions
+				.textToBePresentInElement(By
+						.cssSelector
+						("html body div#wrapper div#page-wrapper div.row div.col-lg-12 table#news.table tbody#tab tr td"),"Не проверено")));
+			
+		
+		//find link in table data
+		WebElement td = Browser.instance.findElement(By
+				.cssSelector("html body div#wrapper div#page-wrapper div.row div.col-lg-12 table#news.table tbody#tab tr td a"));
+		td.click();
+		
+		
+	}
+
+}
