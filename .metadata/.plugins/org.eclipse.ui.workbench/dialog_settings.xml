@@ -16,13 +16,6 @@
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
 		<item value="8" key="DIALOG_X_ORIGIN"/>
 	</section>
-	<section name="InstallationDialogSettings">
-		<item value="706" key="DIALOG_WIDTH"/>
-		<item value="-3" key="DIALOG_Y_ORIGIN"/>
-		<item value="743" key="DIALOG_HEIGHT"/>
-		<item value="-295" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-	</section>
 	<section name="NewWizardAction">
 		<item value="org.eclipse.jst.ejb.ui.internal.wizard.AddSessionBeanWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
@@ -34,6 +27,13 @@
 			<item value="org.eclipse.wst.web.ui"/>
 			<item value="org.eclipse.jst.ws.ui.new"/>
 		</list>
+	</section>
+	<section name="InstallationDialogSettings">
+		<item value="706" key="DIALOG_WIDTH"/>
+		<item value="-3" key="DIALOG_Y_ORIGIN"/>
+		<item value="-295" key="DIALOG_X_ORIGIN"/>
+		<item value="743" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="ImportExportAction">
 	</section>

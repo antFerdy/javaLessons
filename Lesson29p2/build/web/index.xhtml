@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link href="./resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="header">
+            <ui:insert name="top"></ui:insert>
+            <h1>Stock Quotes</h1>
+
+
+        </div>
+        <div>
+            <div id="sidebar">
+                <ui:insert name="left"></ui:insert>
+                <p><a href="http://habrahabr.ru/">Main page</a></p>
+                <p><a href="http://habrahabr.ru/">Blog</a></p>
+                <p><a href="http://habrahabr.ru/">My Results</a></p>
+                <p><a href="http://habrahabr.ru/">About</a></p>
+
+
+            </div>
+            <div id="content" class="left_content">
+                <h:form>
+                    <ui:insert name="content"></ui:insert>
+                    <h:outputText value="Please insert your ticker here: "/> <br></br>
+                    <h:inputText value="#{StockServerBean.ticker}" title="Ticker" id ="ticker"/>
+                    <h:commandButton action="#{StockServerBean.getQuote(ticker)}" value="Submit"/>
+                </h:form>
+            </div>
+        </div>
+        <div id="footer">
+            <ui:insert name="bottom">
+                &copy;Rustem Zhumagulov
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>
