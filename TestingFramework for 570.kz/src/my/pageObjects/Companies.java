@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import my.test.Browser;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;

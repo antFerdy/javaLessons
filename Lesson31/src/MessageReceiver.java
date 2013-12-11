@@ -49,6 +49,7 @@ public class MessageReceiver implements MessageListener {
 		try {
 			if(arg0 instanceof TextMessage) {
 				msgText = ((TextMessage) arg0).getText();
+				System.out.println("The text of message is " + msgText);
 			}
 		} catch(JMSException e) {
 			System.out.println("Error " + e.getMessage());

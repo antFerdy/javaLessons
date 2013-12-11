@@ -1,0 +1,40 @@
+package my.test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import my.pageObjects.FirstPage;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestEnter_to_Site {
+	FirstPage ts;
+	
+	
+	@Before
+	public void setUp() throws Exception {
+		ts = new FirstPage();
+		Browser.initialize();
+		
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		Browser.close();
+	}
+
+	@Test
+	public void I_Can_Goto_mainPage() {
+		ts.goTo();
+		ts.callThe570();
+		assertEquals(ts.getTextInField(), "570570");
+		ts.pressOkBtn();
+		assertTrue(ts.getPageImage().isDisplayed());
+		
+		
+	}
+
+	
+	
+}

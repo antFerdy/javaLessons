@@ -1,9 +1,11 @@
 package my.test;
 
-import static org.junit.Assert.*;
 
+
+import my.pageObjects.Browser;
 import my.pageObjects.Companies;
 import my.pageObjects.Dashboard;
+import my.pageObjects.EditPage;
 import my.pageObjects.LoginPage;
 
 import org.junit.After;
@@ -27,7 +29,7 @@ public class TestChange_CompanyStatus {
 		LoginPage.GoTo();
 		
 		LoginPage.loginAs("admin")
-		.WithPassword("admin")
+		.withPassword("admin")
 		.login();
 		
 		Dashboard.GoToCompany();

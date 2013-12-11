@@ -1,0 +1,11 @@
+package my.test;
+
+public class NewPostPage {
+
+	public static void GoTo() {
+		
+		
+		
+	}
+
+}

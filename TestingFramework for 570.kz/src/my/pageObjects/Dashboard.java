@@ -1,6 +1,5 @@
 package my.pageObjects;
 
-import my.test.Browser;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

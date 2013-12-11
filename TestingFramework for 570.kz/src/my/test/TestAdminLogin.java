@@ -2,6 +2,7 @@ package my.test;
 
 import static org.junit.Assert.*;
 
+import my.pageObjects.Browser;
 import my.pageObjects.Dashboard;
 import my.pageObjects.LoginPage;
 
@@ -25,7 +26,7 @@ public class TestAdminLogin {
 	public void Admin_can_login() {
 		LoginPage.GoTo();
 		LoginPage.loginAs("admin")
-		.WithPassword("admin")
+		.withPassword("admin")
 		.login();
 		
 		assertTrue("Login Failed",Dashboard.isTrue());

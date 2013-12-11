@@ -2,7 +2,6 @@ package my.pageObjects;
 
 import java.util.concurrent.TimeUnit;
 
-import my.test.Browser;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -20,7 +19,7 @@ public class LoginCommand {
 		this.userName = userName;
 	}
 
-	public LoginCommand WithPassword(String password) {
+	public LoginCommand withPassword(String password) {
 		this.password = password;
 		return this;
 	}

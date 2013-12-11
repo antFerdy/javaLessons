@@ -2,6 +2,7 @@ package my.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import my.pageObjects.Browser;
 import my.pageObjects.FirstPage;
 
 import org.junit.After;

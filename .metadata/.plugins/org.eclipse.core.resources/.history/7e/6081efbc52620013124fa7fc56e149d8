@@ -1,0 +1,10 @@
+package my.test;
+
+public class Post {
+
+	public Post isLocateOnMainPage() {
+		// TODO Auto-generated method stub
+		return this;
+	}
+
+}

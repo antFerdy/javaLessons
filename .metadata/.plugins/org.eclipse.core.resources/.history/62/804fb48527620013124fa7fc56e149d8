@@ -1,0 +1,46 @@
+package Beans;
+
+import java.util.ArrayList;
+
+import javax.ejb.Schedule;
+import javax.ejb.Stateless;
+import javax.ejb.Timer;
+import javax.jms.Connection;
+import javax.jms.ConnectionFactory;
+import javax.jms.Session;
+
+@Stateless
+public class StockServerBean {
+	
+	//Creating Price String and ArrayList with tickers
+    private String price = null;
+    private ArrayList<String> tickers = null;
+    
+    //Connection Factory and Connection references
+    ConnectionFactory factory = null;
+    Connection conn = null;
+    
+    //Session 
+    Session session = null;
+    
+    
+    //Constructor of StockServerBean with new Quotes
+    public StockServerBean() {
+    	tickers = new ArrayList<String>();
+        //Add the tickers
+        tickers.add("AAPL");
+        tickers.add("AMZN");
+        tickers.add("MNST");
+        tickers.add("FFIV");
+        tickers.add("GMCR");
+        tickers.add("TSLA");
+        tickers.add("DDD");     
+    }
+	
+
+	@Schedule(second="*/10", minute="*", hour="9-17", dayOfWeek="Mon-Fri",
+      dayOfMonth="*", month="*", year="*", info="MyTimer")
+    private void getQuotes(String symbol) {
+        
+    }
+}

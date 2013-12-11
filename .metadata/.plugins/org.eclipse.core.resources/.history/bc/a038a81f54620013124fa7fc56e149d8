@@ -1,0 +1,26 @@
+package my.test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import my.pageObjects.Browser;
+
+public class Post {
+
+	public Post isLocateOnMainPage(String option) {
+		Select status = new Select(Browser.instance.findElement(By.name("status")));
+		status.
+		
+		
+		
+		
+		return this;
+	}
+
+	public void create() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

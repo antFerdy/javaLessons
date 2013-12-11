@@ -1,0 +1,32 @@
+package my.test;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+import my.pageObjects.Browser;
+
+public class Post {
+	FileInputStream in; 
+	
+	public Post isLocateOnMainPage(String option) {
+		
+		Select status = new Select(Browser.instance.findElement(By.name("status")));
+		status.selectByVisibleText(option);
+		return this;
+	}
+
+	public void create() {
+		// TODO Auto-generated method stub
+		try {
+			in = new FileInputStream("C://Users/zhumagulov_r/workspace/TestingFramework for 570.kz/src/TestingResourses/news.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+}
